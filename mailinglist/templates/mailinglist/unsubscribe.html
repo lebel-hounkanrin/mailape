@@ -1,0 +1,11 @@
+{%extends 'base.html' %} 
+{% block title %} Unsubscribe ? {%endblock%} 
+{%block body %} 
+<div class="col">
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to unsubscribe to {{subscriber.mailing_list.name}}</p>
+        <input value="yes, i want to unsubscribe" class="btn btn-danger">
+    </form>
+</div>
+{%endblock%}
