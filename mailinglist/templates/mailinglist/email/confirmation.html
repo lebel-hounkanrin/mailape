@@ -1,0 +1,8 @@
+{% extends "mailinglist/email/email_base.html" %} 
+{% block body %} 
+<h1>Confirmation subscription to {{mailing_list}} </h1>
+<p>Someone (hopefully you) just subscribed to {{mailing_list}}.</p>
+<p>To confirm your subscription click <a href="{{confirmation_link}}">here</a>.</p>
+<p>If you don't confirm, you won't hear from {{mailing_list}} again.</p>
+<p>Thanks, </p>
+<p>Your friendly internet Mail Ape</p>
