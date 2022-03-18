@@ -14,7 +14,7 @@ class EmailTemplateContext(Context):
     def __init__(self,  subscriber, dict_=None, **kwargs):
         if dict_ is None:
             dict_ = {}
-        email_ctx = self.common_context(subscriber):
+        email_ctx = self.common_context(subscriber)
         email_ctx.update({})
         super().__init__(email_ctx, **kwargs)
 
@@ -28,8 +28,8 @@ class EmailTemplateContext(Context):
             'mailing_list': subscriber.mailing_list
         }
 
-    def send_confirmation_email(subscriber):
-        mailing_list= subscriber.mailinglist
+def send_confirmation_email(subscriber):
+        mailing_list= subscriber.mailing_list
         confirmation_link = EmailTemplateContext.make_link(
             reverse('mailinglist:confirm_subscription',
             kwargs={'pk':subscriber.id})

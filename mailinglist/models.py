@@ -28,7 +28,7 @@ class Subscriber(models.Model):
     mailing_list = models.ForeignKey(MailingList, on_delete=models.CASCADE)
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
-        is_new = self._state.ading or force_insert
+        is_new = self._state.adding or force_insert
         super().save(force_insert=force_insert, force_update=force_update, using=using,
          update_fields=update_fields)
         if is_new:
